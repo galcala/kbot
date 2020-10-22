@@ -1,1 +1,1 @@
-hola
+puts "hola, mundo"
