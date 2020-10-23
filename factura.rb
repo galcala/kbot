@@ -20,8 +20,8 @@ n_pu=pu.to_i
 
 n_subtotal=multiplicar(n_cantidad,n_pu)
 n_impuesto=aplicar_impuesto(n_subtotal,estado)
-n_total=n_subtotal
+n_total=n_subtotal+n_impuesto
 
 puts "# #{n_cantidad} * $#{n_pu} = $#{n_subtotal}"
-puts n_impuesto
+puts "#{estado}(%10.0) = $#{n_impuesto}"
 puts "Total = $#{n_total}"
