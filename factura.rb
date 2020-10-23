@@ -21,7 +21,7 @@ end
 
 cantidad= ARGV[0]
 pu= ARGV[1]
-estado= 'CA'
+estado= ARGV[2]
 
 n_cantidad=cantidad.to_i
 n_pu=pu.to_i
