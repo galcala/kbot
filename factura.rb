@@ -61,5 +61,5 @@ n_total=n_subtotal+n_impuesto-n_descuento
 #Imprime en formato
 puts "# #{n_cantidad} * $#{n_pu} = $#{n_subtotal}"
 puts "#{estado}(%#{porc_impuesto}) = $#{n_impuesto}"
-puts "DTO(%5.0) = $#{n_descuento}"
+puts "DTO(%#{porc_descuento}) = $#{n_descuento}"
 puts "Total = $#{n_total}"
