@@ -44,8 +44,8 @@ cantidad= ARGV[0]
 pu= ARGV[1]
 estado= ARGV[2]
 
-n_cantidad=cantidad.to_i
-n_pu=pu.to_i
+n_cantidad=cantidad.to_f
+n_pu=pu.to_f
 
 #Calcula subtotal
 n_subtotal=multiplicar(n_cantidad,n_pu)
