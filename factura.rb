@@ -4,6 +4,14 @@ end
 
 def aplicar_impuesto(n_subtotal,estado)
     case estado
+    when "UT"
+        n_subtotal*0.1
+    when "NV"
+        n_subtotal*0.1
+    when "TX"
+        n_subtotal*0.1
+    when "AL"
+        n_subtotal*0.1
     when "CA"
         n_subtotal*0.1
     else
