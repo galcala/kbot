@@ -19,16 +19,24 @@ def obtener_impuesto(estado)
     end
 end
 
-def aplicar_impuesto(n_subtotal,porc_impuesto)
-    n_subtotal*porc_impuesto/100
-end
-
 def obtener_descuento(n_subtotal)
     if n_subtotal>50000
-        n_subtotal*0.05
+        @porc_descuento=15
+    elsif n_subtotal>10000
+        @porc_descuento=10
+    elsif n_subtotal>7000
+        @porc_descuento=7
+    elsif n_subtotal>5000
+        @porc_descuento=5
+    elsif n_subtotal>1000
+        @porc_descuento=3
     else
-        n_subtotal*0.05
+        @porc_descuento=0
     end
+end
+
+def aplicar_porcentaje(n_subtotal,porcentaje)
+    n_subtotal*porcentaje/100
 end
 
 cantidad= ARGV[0]
@@ -40,8 +48,9 @@ n_pu=pu.to_i
 
 n_subtotal=multiplicar(n_cantidad,n_pu)
 porc_impuesto=obtener_impuesto(estado)
-n_impuesto=aplicar_impuesto(n_subtotal,porc_impuesto)
-n_descuento=obtener_descuento(n_subtotal)
+n_impuesto=aplicar_porcentaje(n_subtotal,porc_impuesto)
+porc_descuento=obtener_descuento(n_subtotal)
+n_descuento=aplicar_porcentaje(n_subtotal,porc_descuento)
 n_total=n_subtotal+n_impuesto-n_descuento
 
 puts "# #{n_cantidad} * $#{n_pu} = $#{n_subtotal}"
