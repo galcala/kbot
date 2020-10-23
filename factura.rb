@@ -39,6 +39,7 @@ def aplicar_porcentaje(n_subtotal,porcentaje)
     n_subtotal*porcentaje/100
 end
 
+#Captura datos
 cantidad= ARGV[0]
 pu= ARGV[1]
 estado= ARGV[2]
@@ -46,13 +47,18 @@ estado= ARGV[2]
 n_cantidad=cantidad.to_i
 n_pu=pu.to_i
 
+#Calcula subtotal
 n_subtotal=multiplicar(n_cantidad,n_pu)
+#Calcula impuestos
 porc_impuesto=obtener_impuesto(estado)
 n_impuesto=aplicar_porcentaje(n_subtotal,porc_impuesto)
+#Calcula descuentos
 porc_descuento=obtener_descuento(n_subtotal)
 n_descuento=aplicar_porcentaje(n_subtotal,porc_descuento)
+#Calcula total
 n_total=n_subtotal+n_impuesto-n_descuento
 
+#Imprime en formato
 puts "# #{n_cantidad} * $#{n_pu} = $#{n_subtotal}"
 puts "#{estado}(%#{porc_impuesto}) = $#{n_impuesto}"
 puts "DTO(%5.0) = $#{n_descuento}"
