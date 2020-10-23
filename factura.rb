@@ -33,5 +33,5 @@ n_total=n_subtotal+n_impuesto-n_descuento
 
 puts "# #{n_cantidad} * $#{n_pu} = $#{n_subtotal}"
 puts "#{estado}(%10.0) = $#{n_impuesto}"
-puts n_descuento
+puts "DTO(%5.0) = $#{n_descuento}"
 puts "Total = $#{n_total}"
